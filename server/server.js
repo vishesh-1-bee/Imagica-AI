@@ -3,6 +3,7 @@ dotenv.config()
 import express from "express"
 import connectdb from "./utils/db.js"
 import routes from "./routes/auth.js"
+import imageRoute from "./routes/imageGenerate.js"
 import cors from 'cors'
 const app = express()
 const PORT = 3001
@@ -18,6 +19,7 @@ const corsOptions={
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use("/api/auth", routes)
+app.use("/api/image", imageRoute )
 app.get("/favicon.ico", (req, res) => res.status(204));
 app.get("/" , (req , res)=>{
     console.log("it is running");

@@ -31,7 +31,7 @@ export const register = async (req, res) => {
             message: "registeration done ",
             token: await user.generateToken(),
             userId: user._id.toString(),
-            username : userExist.name
+            username: userExist.name
         })
 
     } catch (error) {
@@ -40,7 +40,7 @@ export const register = async (req, res) => {
     }
 }
 
- export const login = async (req, res) => {
+export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const userExist = await userModel.findOne({ email })
@@ -67,12 +67,19 @@ export const register = async (req, res) => {
 
 }
 
- export const userCredit =async (req , res)=>{
+export const userCredit = async (req, res) => {
     try {
-        
-        
+       const userdeatils = req.user
+       console.log(userdeatils);
+       res.status(200).json({ userdeatils})
+       
+
     } catch (error) {
-        console.log({msg: error});
-        
+        console.log({ msg: error });
+
     }
- }
+}
+
+//  const { userId } = req.body
+//         const user = userModel.findById(userId);credits: userdeatils.creditBalance , id: userdeatils._id,userdeatil: userdeatils.name
+//         res.json({ success: true, credit: user.creditBalance, userdetails: { name: user.name } })
