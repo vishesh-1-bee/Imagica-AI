@@ -19,7 +19,7 @@ const Buycredit = () => {
       order_id: order.id,
       handler: async (response) => {
         try {
-          const { data } = await axios.post('http://localhost:3001/api/auth/verify-razor', response,
+          const { data } = await axios.post('https://imagica-ai-backend.onrender.com/api/auth/verify-razor', response,
             {
               headers: {
                 Authorization: `Bearer ${token}`
