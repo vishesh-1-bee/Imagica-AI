@@ -34,7 +34,7 @@ const navigate= useNavigate()
             if (state === 'login') {
                 console.log("Sending login request...");
 
-                const response = await axios.post('http://localhost:3001/api/auth/login', {
+                const response = await axios.post('https://imagica-ai-backend.onrender.com/api/auth/login', {
                     email,
                     password,
                 });
@@ -50,7 +50,7 @@ const navigate= useNavigate()
 
             } else {
                
-                const response = await axios.post('http://localhost:3001/api/auth/register', {
+                const response = await axios.post('https://imagica-ai-backend.onrender.com/api/auth/register', {
                     name,
                     email,
                     password,
