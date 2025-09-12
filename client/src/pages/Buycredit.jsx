@@ -51,7 +51,7 @@ const Buycredit = () => {
 
       //calling the api 
 
-      const { data } = await axios.post('http://localhost:3001/api/auth/pay-razorpay',
+      const { data } = await axios.post('https://imagica-ai-backend.onrender.com/api/auth/pay-razorpay',
         { planId },
         {
           headers: {
