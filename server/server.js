@@ -9,13 +9,25 @@ const app = express()
 const PORT = 3001
 
 
-//code for the cors error 
+// ✅ CORS whitelist
+const whitelist = [
+  "http://localhost:5173",
+  "https://imagica-ai-frontend.onrender.com",
+];
 
-const corsoptions = {
-  origin: "http://localhost:5173",
-  methods: "GET , POST , PUT , PATCH",
-  credential: true
-}
+const corsOptions = {
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH"],
+};
+
 app.use(cors(corsoptions))
 app.use(express.json())
 app.use("/api/auth", routes)
