@@ -34,7 +34,7 @@ export const Appcontextprovider = ({ children }) => {
 
  const loadcredidtData= async()=>{
   try {
-    const {data}= await axios.get( 'http://localhost:3001/api/auth/user',
+    const {data}= await axios.get( 'https://imagica-ai-backend.onrender.com/api/auth/user',
         {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ useEffect(()=>{
 
 const generateImage= async(prompt)=>{
   try {
-  const {data}=  await axios.post('http://localhost:3001/api/image/image-generate',{prompt},
+  const {data}=  await axios.post('https://imagica-ai-backend.onrender.com/api/image/image-generate',{prompt},
       {
         headers: {
           Authorization: `Bearer ${token}`,
