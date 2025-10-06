@@ -43,7 +43,7 @@ const Header = () => {
                 </div>
                 <div className='mt-3 md:mt-6 w-2/3 md:max-w-3/4 lg:w-1/2'>
                     <motion.p className='text-xs sm:text-xl tracking-tight md:text-2xl font-light'
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 20 }} 
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
                     >Unleash your creativity with AI . Turn your imagination into virtual art in seconds</motion.p>

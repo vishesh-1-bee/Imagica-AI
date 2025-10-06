@@ -13,10 +13,10 @@ import { useData } from './context/Appcontext'
 const App = () => {
   const {showLogin}= useData()
   return (
-    < div className="min-h-screen w-full relative px-4 sm:px-10 md:px-14 lg:px-28 bg-black" >
+    < div className="min-h-screen w-full relative sm:px-10 md:px-14 lg:px-28 bg-black" >
       {/* Black Basic Grid Background */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 "
         style={{
           background: "#000000",
           backgroundImage: `

@@ -5,6 +5,7 @@ import connectdb from "./utils/db.js"
 import routes from "./routes/auth.js"
 import imageRoute from "./routes/imageGenerate.js"
 import cors from 'cors'
+
 const app = express()
 const PORT = 3001
 
